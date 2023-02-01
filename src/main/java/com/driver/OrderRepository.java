@@ -9,21 +9,15 @@ import java.util.List;
 
 @Repository
 public class OrderRepository {
-    private HashMap<String,Order> orderDB;
+    private HashMap<String,Order> orderDB = new HashMap<>();
 
-    private HashMap<String,DeliveryPartner> partnerDB;
+    private HashMap<String,DeliveryPartner> partnerDB = new HashMap<>();
 
-    private HashMap<String, List<String>> orderPartnerPairDB;
+    private HashMap<String, List<String>> orderPartnerPairDB = new HashMap<>();
     //Partner --> List<Order>  pair
 
-    private List<String> orders;
+    private List<String> orders = new ArrayList<>();
 
-    public OrderRepository() {
-        this.orderDB = new HashMap<>();
-        this.partnerDB = new HashMap<>();
-        this.orderPartnerPairDB = new HashMap<>();
-        this.orders = new ArrayList<>();
-    }
 
     public void saveOrder(Order order) {
         orders.add(order.getId());
