@@ -20,7 +20,7 @@ public class OrderService {
     }
 
     public void addOrderPartnerPair(String orderId, String partnerId) {
-        orderRepository.saveOrderPartnerPair(orderId,partnerId);
+        orderRepository.saveOrderPartnerMap(orderId,partnerId);
     }
 
     public Order getOrderById(String orderId) {
@@ -28,7 +28,7 @@ public class OrderService {
     }
 
     public DeliveryPartner getPartnerById(String partnerId) {
-        return orderRepository.findPartnerBy(partnerId);
+        return orderRepository.findPartnerById(partnerId);
     }
 
     public Integer getOrderCountByPartnerId(String partnerId) {
@@ -56,10 +56,10 @@ public class OrderService {
     }
 
     public void deletePartnerById(String partnerId) {
-        orderRepository.deletePartnerById(partnerId);
+        orderRepository.deletePartner(partnerId);
     }
 
     public void deleteOrderById(String orderId) {
-        orderRepository.deleteOrderById(orderId);
+        orderRepository.deleteOrder(orderId);
     }
 }
